@@ -1,6 +1,6 @@
 import sum from "./test";
 
-const i = sum(1110, 20);
+const i = sum(1, 20);
 
 function App() {
   return <div className="App">{i}</div>;
