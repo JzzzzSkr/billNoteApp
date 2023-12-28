@@ -5,6 +5,11 @@ import dayjs from "dayjs";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
 import _ from "lodash";
+import DailyBill from "./Components/dayBill/index";
+import utc from 'dayjs/plugin/utc'
+
+dayjs.extend(utc) // 设置utc时区
+
 
 const Month = () => {
   // State to control visibility of date picker
@@ -67,6 +72,23 @@ const Month = () => {
     setCurrentMonthList(monthGroup[newParsedDate]);
   };
 
+  // 当前月按照日来分组
+  // console.log(currentMonthList);
+  const dailyList = useMemo(() => {
+    const dayBill = _.groupBy(
+      currentMonthList,
+      (item) => dayjs(item.date).utc().format("YYYY-MM-DD") // 将 UTC 时间转换为本地时间
+    );
+
+    const keys = Object.keys(dayBill).sort((a, b) => b.localeCompare(a));;
+    return {
+      dayBill,
+      keys,
+    };
+  }, [currentMonthList]);
+
+  // console.log(dailyList);
+
   return (
     <div className="monthlyBill">
       <NavBar className="nav" backArrow={false}>
@@ -108,6 +130,16 @@ const Month = () => {
             onConfirm={confirm}
           />
         </div>
+        {/* {单日列表统计} */}
+        {dailyList.keys.map((item) => {
+          return (
+            <DailyBill
+              key={item}
+              billList={dailyList.dayBill[item]}
+              date={item}
+            ></DailyBill>
+          );
+        })}
       </div>
     </div>
   );
