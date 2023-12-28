@@ -1,14 +1,14 @@
 import { TabBar } from "antd-mobile";
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { getBillList } from "../../store/modles/billStore";
 import "./index.scss";
 import {
   BillOutline,
   CalculatorOutline,
   AddCircleOutline,
 } from "antd-mobile-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { getBillList } from "@/store/modles/billStore";
 
 const tabs = [
   {
@@ -32,8 +32,13 @@ const Layout = () => {
   const navigate = useNavigate();
   const swithRoute = (path) => {
     console.log(path);
-    navigate(path)
+    navigate(path);
   };
+  // 获取数据
+  const dispatch = useDispatch(); // 使用useDispatch触发获得数据
+  useEffect(() => {
+    dispatch(getBillList());
+  }, [dispatch]);
 
   return (
     <div className="layout">

@@ -3,39 +3,68 @@ import "./index.scss";
 import { useEffect, useMemo, useState } from "react";
 import dayjs from "dayjs";
 import classNames from "classnames";
-import { useDispatch, useSelector } from "react-redux";
-import { getBillList } from "@/store/modles/billStore";
+import { useSelector } from "react-redux";
 import _ from "lodash";
 
 const Month = () => {
-  const [dateVisible, setDateVisable] = useState(false);
-
-  // 获取数据
-  const dispatch = useDispatch(); // 使用useDispatch触发获得数据
-  useEffect(() => {
-    dispatch(getBillList());
-  }, [dispatch]);
-
-  const dataList = useSelector((state) => {
-    return state.bill.billList;
-  });
-  // console.log(dataList);
-  const monthGroup = useMemo(() => {
-    return _.groupBy(dataList, (item) => dayjs(item.date).format("YYYY-MM"));
-  }, [dataList]);
-  // console.log(monthGroup);
-
-  // settime
+  // State to control visibility of date picker
+  const [dateVisible, setDateVisible] = useState(false);
+  // State to store the list of bills for the current month
+  const [currentMonthList, setCurrentMonthList] = useState([]);
+  // State to store the currently selected date in YYYY-MM format
   const [parsedDate, setParsedDate] = useState(dayjs().format("YYYY-MM"));
-  const confirm = (date) => {
-    setDateVisable(false);
-    // console.log(date); Thu Dec 01 2022 00:00:00 GMT+1100 (Australian Eastern Daylight Time)
 
-    // 设置时间
-    const parsedDate = dayjs(date).format("YYYY-MM");
-    // console.log(parsedDate);
-    setParsedDate(parsedDate);
-    console.log(monthGroup[parsedDate]);
+  // Retrieving the list of bills from Redux state
+  const dataList = useSelector((state) => state.bill.billList);
+
+  // Grouping the data list by month using lodash and memoizing the result
+  const monthGroup = useMemo(
+    () => _.groupBy(dataList, (item) => dayjs(item.date).format("YYYY-MM")),
+    [dataList]
+  );
+
+  // Effect to set the current month's bill list on component mount and when monthGroup changes
+  useEffect(() => {
+    setCurrentMonthList(monthGroup[dayjs().format("YYYY-MM")]);
+  }, [monthGroup]);
+
+  // Calculating the total income and outcome for the current month
+  const monResult = useMemo(() => {
+    let totalIncomeInMonth = 0;
+    let totalPayInMonth = 0;
+
+    // Early return if currentMonthList is not set
+    if (!currentMonthList) {
+      return {
+        totalIncomeInMonth,
+        totalPayInMonth,
+        total: totalIncomeInMonth + totalPayInMonth,
+      };
+    }
+
+    // Calculating total income
+    totalIncomeInMonth = currentMonthList
+      .filter((item) => item.type === "income")
+      .reduce((a, c) => a + c.money, 0);
+
+    // Calculating total outcome
+    totalPayInMonth = currentMonthList
+      .filter((item) => item.type === "pay")
+      .reduce((a, c) => a + c.money, 0);
+
+    return {
+      totalIncomeInMonth,
+      totalPayInMonth,
+      total: totalIncomeInMonth + totalPayInMonth,
+    };
+  }, [currentMonthList]);
+
+  // Function to handle date confirmation from the date picker
+  const confirm = (date) => {
+    setDateVisible(false);
+    const newParsedDate = dayjs(date).format("YYYY-MM");
+    setParsedDate(newParsedDate);
+    setCurrentMonthList(monthGroup[newParsedDate]);
   };
 
   return (
@@ -45,42 +74,37 @@ const Month = () => {
       </NavBar>
       <div className="content">
         <div className="header">
-          {/* 时间切换区域 */}
-          <div className="date" onClick={() => setDateVisable(true)}>
+          <div className="date" onClick={() => setDateVisible(true)}>
             <span className="text">{parsedDate} Statement</span>
-            {/* 思路：根据当前弹框打开的状态控制expand类名是否存在 */}
             <span
               className={classNames("arrow", { expand: dateVisible })}
             ></span>
           </div>
-          {/* 统计区域 */}
           <div className="twoLineOverview">
             <div className="item">
-              <span className="money">100</span>
+              <span className="money">
+                {monResult.totalPayInMonth.toFixed(2)}
+              </span>
               <span className="type">Outcome</span>
             </div>
             <div className="item">
-              <span className="money">200</span>
+              <span className="money">
+                {monResult.totalIncomeInMonth.toFixed(2)}
+              </span>
               <span className="type">Income</span>
             </div>
             <div className="item">
-              <span className="money">100</span>
+              <span className="money">{monResult.total.toFixed(2)}</span>
               <span className="type">Sum</span>
             </div>
           </div>
-          {/* 时间选择器 */}
           <DatePicker
             className="kaDate"
             title="Bill date"
             precision="month"
             visible={dateVisible}
-            // onCancel={() => setDateVisible(false)}
-            // onConfirm={onConfirm}
-            // onClose={() => setDateVisible(false)}
             max={new Date()}
-            onClose={() => {
-              setDateVisable(false);
-            }}
+            onClose={() => setDateVisible(false)}
             onConfirm={confirm}
           />
         </div>

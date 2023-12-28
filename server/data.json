@@ -1,103 +1,571 @@
 {
-    "ka": [
-      {
-        "type": "pay",
-        "money": -99,
-        "date": "2022-10-24 10:36:42",
-        "useFor": "drinks",
-        "id": 1
-      },
-      {
-        "type": "pay",
-        "money": -88,
-        "date": "2022-10-24 10:37:51",
-        "useFor": "longdistance",
-        "id": 2
-      },
-      {
-        "type": "income",
-        "money": 100,
-        "date": "2022-10-22 00:00:00",
-        "useFor": "bonus",
-        "id": 3
-      },
-      {
-        "type": "pay",
-        "money": -33,
-        "date": "2022-09-24 16:15:41",
-        "useFor": "dessert",
-        "id": 4
-      },
-      {
-        "type": "pay",
-        "money": -56,
-        "date": "2022-10-22T05:37:06.000Z",
-        "useFor": "drinks",
-        "id": 5
-      },
-      {
-        "type": "pay",
-        "money": -888,
-        "date": "2022-10-28T08:21:42.135Z",
-        "useFor": "travel",
-        "id": 6
-      },
-      {
-        "type": "income",
-        "money": 10000,
-        "date": "2023-03-20T06:45:54.004Z",
-        "useFor": "salary",
-        "id": 7
-      },
-      {
-        "type": "pay",
-        "money": -10,
-        "date": "2023-03-22T07:17:12.531Z",
-        "useFor": "drinks",
-        "id": 8
-      },
-      {
-        "type": "pay",
-        "money": -20,
-        "date": "2023-03-22T07:51:20.421Z",
-        "useFor": "dessert",
-        "id": 9
-      },
-      {
-        "type": "pay",
-        "money": -100,
-        "date": "2023-03-22T09:18:12.898Z",
-        "useFor": "drinks",
-        "id": 17
-      },
-      {
-        "type": "pay",
-        "money": -50,
-        "date": "2023-03-23T09:11:23.312Z",
-        "useFor": "food",
-        "id": 18
-      },
-      {
-        "type": "pay",
-        "money": -100,
-        "date": "2023-04-04T03:03:15.617Z",
-        "useFor": "drinks",
-        "id": 19
-      },
-      {
-        "type": "pay",
-        "money": -100,
-        "date": "2023-04-02T16:00:00.000Z",
-        "useFor": "food",
-        "id": 20
-      },
-      {
-        "type": "income",
-        "money": 10000,
-        "date": "2023-02-28T16:00:00.000Z",
-        "useFor": "salary",
-        "id": 21
-      }
-    ]
-  }
-  
+  "ka": [
+    {
+      "type": "pay",
+      "money": -99,
+      "date": "2022-10-24 10:36:42",
+      "useFor": "drinks",
+      "id": 1
+    },
+    {
+      "type": "pay",
+      "money": -88,
+      "date": "2022-10-24 10:37:51",
+      "useFor": "longdistance",
+      "id": 2
+    },
+    {
+      "type": "income",
+      "money": 100,
+      "date": "2022-10-22 00:00:00",
+      "useFor": "bonus",
+      "id": 3
+    },
+    {
+      "type": "pay",
+      "money": -33,
+      "date": "2022-09-24 16:15:41",
+      "useFor": "dessert",
+      "id": 4
+    },
+    {
+      "type": "pay",
+      "money": -56,
+      "date": "2022-10-22T05:37:06.000Z",
+      "useFor": "drinks",
+      "id": 5
+    },
+    {
+      "type": "pay",
+      "money": -888,
+      "date": "2022-10-28T08:21:42.135Z",
+      "useFor": "travel",
+      "id": 6
+    },
+    {
+      "type": "income",
+      "money": 10000,
+      "date": "2023-03-20T06:45:54.004Z",
+      "useFor": "salary",
+      "id": 7
+    },
+    {
+      "type": "pay",
+      "money": -10,
+      "date": "2023-03-22T07:17:12.531Z",
+      "useFor": "drinks",
+      "id": 8
+    },
+    {
+      "type": "pay",
+      "money": -20,
+      "date": "2023-03-22T07:51:20.421Z",
+      "useFor": "dessert",
+      "id": 9
+    },
+    {
+      "type": "pay",
+      "money": -100,
+      "date": "2023-03-22T09:18:12.898Z",
+      "useFor": "drinks",
+      "id": 10
+    },
+    {
+      "type": "pay",
+      "money": -50,
+      "date": "2023-03-23T09:11:23.312Z",
+      "useFor": "food",
+      "id": 11
+    },
+    {
+      "type": "pay",
+      "money": -100,
+      "date": "2023-04-04T03:03:15.617Z",
+      "useFor": "drinks",
+      "id": 12
+    },
+    {
+      "type": "pay",
+      "money": -100,
+      "date": "2023-04-02T16:00:00.000Z",
+      "useFor": "drinks",
+      "id": 13
+    },
+    {
+      "type": "income",
+      "money": 10000,
+      "date": "2023-02-28T16:00:00.000Z",
+      "useFor": "drinks",
+      "id": 14
+    },
+    {
+      "type": "pay",
+      "money": -75,
+      "date": "2023-04-05T10:00:00.000Z",
+      "useFor": "drinks",
+      "id": 15
+    },
+    {
+      "type": "income",
+      "money": 500,
+      "date": "2023-04-05T15:30:00.000Z",
+      "useFor": "drinks",
+      "id": 23
+    },
+    {
+      "type": "pay",
+      "money": -45,
+      "date": "2023-04-06T08:20:00.000Z",
+      "useFor": "drinks",
+      "id": 24
+    },
+    {
+      "type": "income",
+      "money": 1200,
+      "date": "2023-04-07T12:00:00.000Z",
+      "useFor": "part-time job",
+      "id": 25
+    },
+    {
+      "type": "pay",
+      "money": -30,
+      "date": "2023-04-08T09:45:00.000Z",
+      "useFor": "coffee",
+      "id": 26
+    },
+    {
+      "type": "pay",
+      "money": -200,
+      "date": "2023-04-09T14:30:00.000Z",
+      "useFor": "clothing",
+      "id": 27
+    },
+    {
+      "type": "income",
+      "money": 1500,
+      "date": "2023-04-10T17:00:00.000Z",
+      "useFor": "investment return",
+      "id": 28
+    },
+    {
+      "type": "pay",
+      "money": -60,
+      "date": "2023-04-11T20:00:00.000Z",
+      "useFor": "dining out",
+      "id": 29
+    },
+    {
+      "type": "income",
+      "money": 800,
+      "date": "2023-04-12T13:00:00.000Z",
+      "useFor": "online sale",
+      "id": 30
+    },
+    {
+      "type": "pay",
+      "money": -50,
+      "date": "2023-04-13T18:30:00.000Z",
+      "useFor": "movies",
+      "id": 31
+    },
+    {
+      "type": "pay",
+      "money": -120,
+      "date": "2023-04-14T11:15:00.000Z",
+      "useFor": "electronics",
+      "id": 32
+    },
+    {
+      "type": "income",
+      "money": 2500,
+      "date": "2023-04-15T19:00:00.000Z",
+      "useFor": "bonus",
+      "id": 33
+    },
+    {
+      "type": "pay",
+      "money": -120,
+      "date": "2023-04-16T08:30:00.000Z",
+      "useFor": "home repair",
+      "id": 34
+    },
+    {
+      "type": "income",
+      "money": 550,
+      "date": "2023-04-17T14:20:00.000Z",
+      "useFor": "side gig",
+      "id": 35
+    },
+    {
+      "type": "pay",
+      "money": -65,
+      "date": "2023-04-18T19:00:00.000Z",
+      "useFor": "book purchase",
+      "id": 36
+    },
+    {
+      "type": "income",
+      "money": 760,
+      "date": "2023-04-19T12:45:00.000Z",
+      "useFor": "stock dividends",
+      "id": 37
+    },
+    {
+      "type": "pay",
+      "money": -85,
+      "date": "2023-04-20T10:10:00.000Z",
+      "useFor": "gym membership",
+      "id": 38
+    },
+    {
+      "type": "pay",
+      "money": -200,
+      "date": "2023-04-21T15:30:00.000Z",
+      "useFor": "car maintenance",
+      "id": 39
+    },
+    {
+      "type": "income",
+      "money": 3000,
+      "date": "2023-04-22T17:00:00.000Z",
+      "useFor": "consulting",
+      "id": 40
+    },
+    {
+      "type": "pay",
+      "money": -40,
+      "date": "2023-04-23T09:20:00.000Z",
+      "useFor": "breakfast",
+      "id": 41
+    },
+    {
+      "type": "income",
+      "money": 420,
+      "date": "2023-04-24T13:00:00.000Z",
+      "useFor": "freelance writing",
+      "id": 42
+    },
+    {
+      "type": "pay",
+      "money": -150,
+      "date": "2023-04-25T20:30:00.000Z",
+      "useFor": "birthday gift",
+      "id": 43
+    },
+    {
+      "type": "pay",
+      "money": -110,
+      "date": "2023-04-26T11:15:00.000Z",
+      "useFor": "pet care",
+      "id": 44
+    },
+    {
+      "type": "income",
+      "money": 2000,
+      "date": "2023-04-27T19:00:00.000Z",
+      "useFor": "rental income",
+      "id": 45
+    },
+    {
+      "type": "pay",
+      "money": -90,
+      "date": "2023-04-28T08:00:00.000Z",
+      "useFor": "grocery shopping",
+      "id": 46
+    },
+    {
+      "type": "income",
+      "money": 150,
+      "date": "2023-04-29T16:30:00.000Z",
+      "useFor": "art sale",
+      "id": 47
+    },
+    {
+      "type": "pay",
+      "money": -60,
+      "date": "2023-04-30T10:45:00.000Z",
+      "useFor": "gardening supplies",
+      "id": 48
+    },
+    {
+      "type": "pay",
+      "money": -80,
+      "date": "2023-05-01T09:00:00.000Z",
+      "useFor": "utilities",
+      "id": 49
+    },
+    {
+      "type": "income",
+      "money": 500,
+      "date": "2023-05-02T12:00:00.000Z",
+      "useFor": "online tutoring",
+      "id": 50
+    },
+    {
+      "type": "pay",
+      "money": -45,
+      "date": "2023-05-03T18:30:00.000Z",
+      "useFor": "streaming service subscription",
+      "id": 51
+    },
+    {
+      "type": "income",
+      "money": 1000,
+      "date": "2023-05-04T14:20:00.000Z",
+      "useFor": "freelance project",
+      "id": 52
+    },
+    {
+      "type": "pay",
+      "money": -200,
+      "date": "2023-05-05T10:15:00.000Z",
+      "useFor": "household items",
+      "id": 53
+    },
+    {
+      "type": "pay",
+      "money": -150,
+      "date": "2023-05-06T16:45:00.000Z",
+      "useFor": "clothes shopping",
+      "id": 54
+    },
+    {
+      "type": "income",
+      "money": 750,
+      "date": "2023-05-07T11:00:00.000Z",
+      "useFor": "stock trading",
+      "id": 55
+    },
+    {
+      "type": "pay",
+      "money": -90,
+      "date": "2023-05-08T08:30:00.000Z",
+      "useFor": "dining out",
+      "id": 56
+    },
+    {
+      "type": "income",
+      "money": 2000,
+      "date": "2023-05-09T15:00:00.000Z",
+      "useFor": "real estate investment",
+      "id": 57
+    },
+    {
+      "type": "pay",
+      "money": -120,
+      "date": "2023-05-10T19:30:00.000Z",
+      "useFor": "tech gadgets",
+      "id": 58
+    },
+    {
+      "type": "pay",
+      "money": -70,
+      "date": "2023-05-11T10:45:00.000Z",
+      "useFor": "car fuel",
+      "id": 59
+    },
+    {
+      "type": "income",
+      "money": 3000,
+      "date": "2023-05-12T17:00:00.000Z",
+      "useFor": "business contract",
+      "id": 60
+    },
+    {
+      "type": "pay",
+      "money": -100,
+      "date": "2023-05-13T08:00:00.000Z",
+      "useFor": "groceries",
+      "id": 61
+    },
+    {
+      "type": "income",
+      "money": 1500,
+      "date": "2023-05-14T16:30:00.000Z",
+      "useFor": "consulting fee",
+      "id": 62
+    },
+    {
+      "type": "pay",
+      "money": -60,
+      "date": "2023-05-15T10:45:00.000Z",
+      "useFor": "gardening tools",
+      "id": 63
+    },
+    {
+      "type": "pay",
+      "money": -85,
+      "date": "2023-05-16T11:00:00.000Z",
+      "useFor": "restaurant meal",
+      "id": 64
+    },
+    {
+      "type": "income",
+      "money": 450,
+      "date": "2023-05-17T14:00:00.000Z",
+      "useFor": "art commission",
+      "id": 65
+    },
+    {
+      "type": "pay",
+      "money": -55,
+      "date": "2023-05-18T18:00:00.000Z",
+      "useFor": "movie tickets",
+      "id": 66
+    },
+    {
+      "type": "income",
+      "money": 500,
+      "date": "2023-05-19T15:20:00.000Z",
+      "useFor": "side job",
+      "id": 67
+    },
+    {
+      "type": "pay",
+      "money": -150,
+      "date": "2023-05-20T20:30:00.000Z",
+      "useFor": "birthday party expenses",
+      "id": 68
+    },
+    {
+      "type": "pay",
+      "money": -120,
+      "date": "2023-12-01T10:00:00.000Z",
+      "useFor": "holiday gifts",
+      "id": 69
+    },
+    {
+      "type": "income",
+      "money": 3000,
+      "date": "2023-12-02T14:00:00.000Z",
+      "useFor": "year-end bonus",
+      "id": 70
+    },
+    {
+      "type": "pay",
+      "money": -60,
+      "date": "2023-12-03T09:20:00.000Z",
+      "useFor": "winter clothing",
+      "id": 71
+    },
+    {
+      "type": "income",
+      "money": 500,
+      "date": "2023-12-04T16:30:00.000Z",
+      "useFor": "freelance work",
+      "id": 72
+    },
+    {
+      "type": "pay",
+      "money": -200,
+      "date": "2023-12-05T18:00:00.000Z",
+      "useFor": "travel expenses",
+      "id": 73
+    },
+    {
+      "type": "income",
+      "money": 800,
+      "date": "2023-12-06T11:15:00.000Z",
+      "useFor": "investment return",
+      "id": 74
+    },
+    {
+      "type": "pay",
+      "money": -50,
+      "date": "2023-12-07T20:30:00.000Z",
+      "useFor": "dining out",
+      "id": 75
+    },
+    {
+      "type": "income",
+      "money": 1200,
+      "date": "2023-12-08T08:30:00.000Z",
+      "useFor": "consulting",
+      "id": 76
+    },
+    {
+      "type": "pay",
+      "money": -90,
+      "date": "2023-12-09T10:45:00.000Z",
+      "useFor": "electricity bill",
+      "id": 77
+    },
+    {
+      "type": "income",
+      "money": 1500,
+      "date": "2023-12-10T13:00:00.000Z",
+      "useFor": "side business",
+      "id": 78
+    },
+    {
+      "type": "pay",
+      "money": -85,
+      "date": "2023-12-11T14:20:00.000Z",
+      "useFor": "groceries",
+      "id": 79
+    },
+    {
+      "type": "income",
+      "money": 650,
+      "date": "2023-12-12T17:00:00.000Z",
+      "useFor": "art sale",
+      "id": 80
+    },
+    {
+      "type": "pay",
+      "money": -100,
+      "date": "2023-12-13T19:00:00.000Z",
+      "useFor": "gym membership",
+      "id": 81
+    },
+    {
+      "type": "income",
+      "money": 750,
+      "date": "2023-12-14T15:20:00.000Z",
+      "useFor": "stock dividends",
+      "id": 82
+    },
+    {
+      "type": "pay",
+      "money": -150,
+      "date": "2023-12-15T10:00:00.000Z",
+      "useFor": "car maintenance",
+      "id": 83
+    },
+    {
+      "type": "income",
+      "money": 2000,
+      "date": "2023-12-16T16:00:00.000Z",
+      "useFor": "rental income",
+      "id": 84
+    },
+    {
+      "type": "pay",
+      "money": -70,
+      "date": "2023-12-17T08:20:00.000Z",
+      "useFor": "phone bill",
+      "id": 85
+    },
+    {
+      "type": "income",
+      "money": 500,
+      "date": "2023-12-18T12:45:00.000Z",
+      "useFor": "online tutoring",
+      "id": 86
+    },
+    {
+      "type": "pay",
+      "money": -55,
+      "date": "2023-12-19T18:30:00.000Z",
+      "useFor": "pet care",
+      "id": 87
+    },
+    {
+      "type": "income",
+      "money": 1000,
+      "date": "2023-12-20T10:15:00.000Z",
+      "useFor": "part-time job",
+      "id": 88
+    }
+  ]
+}
