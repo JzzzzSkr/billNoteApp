@@ -99,16 +99,34 @@
       "id": 21
     },
     {
-      "type": "income",
-      "money": 1000,
-      "useFor": "",
-      "id": 22
+      "type": "pay",
+      "money": -1111,
+      "useFor": "longdistance",
+      "id": 24
     },
     {
       "type": "pay",
-      "money": -20,
-      "useFor": "",
-      "id": 23
+      "money": -10,
+      "useFor": "drinks",
+      "id": 25
+    },
+    {
+      "type": "income",
+      "money": 100,
+      "useFor": "salary",
+      "id": 26
+    },
+    {
+      "type": "pay",
+      "money": -100,
+      "useFor": "dessert",
+      "id": 27
+    },
+    {
+      "type": "pay",
+      "money": -12,
+      "useFor": "game",
+      "id": 28
     }
   ]
 }
