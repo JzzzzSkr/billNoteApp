@@ -97,6 +97,18 @@
       "date": "2021-12-27T13:00:00.000Z",
       "useFor": "longdistance",
       "id": 21
+    },
+    {
+      "type": "income",
+      "money": 1000,
+      "useFor": "",
+      "id": 22
+    },
+    {
+      "type": "pay",
+      "money": -20,
+      "useFor": "",
+      "id": 23
     }
   ]
 }

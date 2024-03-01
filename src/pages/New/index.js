@@ -11,21 +11,21 @@ import dayjs from "dayjs";
 
 const New = () => {
   const navigate = useNavigate();
-  // 1. 准备一个控制收入支出的状态
-  const [billType, setBillType] = useState("pay"); // pay-支出 income-收入
+  // 1. Prepare a state to control income and expenditure
+  const [billType, setBillType] = useState("pay"); // pay-expenditure income-income
 
-  // 收集金额
+  // Collect amount
   const [money, setMoney] = useState(0);
   const moneyChange = (value) => {
     setMoney(value);
   };
 
-  // 收集账单类型
+  // Collect bill type
   const [useFor, setUseFor] = useState("");
   const dispatch = useDispatch();
-  // 保存账单
+  // Save the bill
   const saveBill = () => {
-    // 收集表单数据
+    // Collect form data
     const data = {
       type: billType,
       money: billType === "pay" ? -money : +money,
@@ -35,11 +35,11 @@ const New = () => {
     console.log(data);
     dispatch(addBillList(data));
   };
-  // 存储选择的时间
+  // Store selected time
   const [date, setDate] = useState();
-  // 控制时间打开关闭
+  // Control the opening and closing of time
   const [dateVisible, setDateVisible] = useState(false);
-  // 确认选择时间
+  // Confirm selected time
   const dateConfirm = (value) => {
     console.log(value);
     setDate(value);
@@ -48,7 +48,7 @@ const New = () => {
   return (
     <div className="keepAccounts">
       <NavBar className="nav" onBack={() => navigate(-1)}>
-        记一笔
+        Record a Note
       </NavBar>
 
       <div className="header">
@@ -58,14 +58,14 @@ const New = () => {
             className={classNames(billType === "pay" ? "selected" : "")}
             onClick={() => setBillType("pay")}
           >
-            支出
+            Expenditure
           </Button>
           <Button
             className={classNames(billType === "income" ? "selected" : "")}
             shape="rounded"
             onClick={() => setBillType("income")}
           >
-            收入
+            Income
           </Button>
         </div>
 
@@ -76,10 +76,10 @@ const New = () => {
               <span className="text" onClick={() => setDateVisible(true)}>
                 {dayjs(date).format("YYYY-MM-DD")}
               </span>
-              {/* 时间选择器 */}
+              {/* Date Picker */}
               <DatePicker
                 className="kaDate"
-                title="记账日期"
+                title="Accounting Date"
                 max={new Date()}
                 visible={dateVisible}
                 onConfirm={dateConfirm}
@@ -100,7 +100,7 @@ const New = () => {
       </div>
 
       <div className="kaTypeList">
-        {/* 数据区域 */}
+        {/* Data area */}
         {billListData[billType].map((item) => {
           return (
             <div className="kaType" key={item.type}>
@@ -132,7 +132,7 @@ const New = () => {
 
       <div className="btns">
         <Button className="btn save" onClick={saveBill}>
-          保 存
+          Save
         </Button>
       </div>
     </div>
